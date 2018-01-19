@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "autoprefixer": "^7.2.5",
     "browser-sync": "^2.23.5",
     "gulp": "^4.0.0",
     "gulp-pug": "^3.3.0",

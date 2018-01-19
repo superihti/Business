@@ -7,6 +7,7 @@ var sass        = require('gulp-sass');
 var spritesmith = require('gulp.spritesmith');
 var rimraf      = require('rimraf');
 var rename      = require("gulp-rename");
+var autoprefixer = require('gulp-autoprefixer');
 
 // ---------------browserSync-----------------------
 gulp.task('server', function() {
@@ -32,6 +33,7 @@ gulp.task('pug', function buildHTML() {
 gulp.task('sass', function () {
   return gulp.src('source/style/style.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer(['last 15 versions']))
     .pipe(rename('style.min.css'))
     .pipe(gulp.dest('build/css'));
 });
