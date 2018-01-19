@@ -8,6 +8,8 @@ var spritesmith = require('gulp.spritesmith');
 var rimraf      = require('rimraf');
 var rename      = require("gulp-rename");
 var autoprefixer = require('gulp-autoprefixer');
+var plumber     = require('gulp-plumber');
+var cssmin      = require('gulp-cssmin');
 
 // ---------------browserSync-----------------------
 gulp.task('server', function() {
@@ -32,9 +34,12 @@ gulp.task('pug', function buildHTML() {
 //---------------Sass--------------------------------
 gulp.task('sass', function () {
   return gulp.src('source/style/style.scss')
-    .pipe(sass().on('error', sass.logError))
+    .pipe(plumber())
+    .pipe(sass())
     .pipe(autoprefixer(['last 15 versions']))
-    .pipe(rename('style.min.css'))
+    .pipe(gulp.dest('build/css'))
+    .pipe(cssmin())
+    .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('build/css'));
 });
  

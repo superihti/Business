@@ -5,9 +5,11 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^7.2.5",
     "browser-sync": "^2.23.5",
     "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-plumber": "^1.2.0",
     "gulp-pug": "^3.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
