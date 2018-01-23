@@ -1,6 +1,17 @@
-body {
-  background: green;
+@import "../../node_modules/normalize.scss/normalize.scss";       
+  body {
+    min-width: 320px;
+    box-sizing: border-box;  
 }
-div {
-  display: flex;
+ul {
+    list-style-type: none;
 }
+a {
+    text-decoration: none;
+}
+.container {
+	width: 1024px;
+    margin: 0 auto;
+}
+@import "import/fonts.scss";
+@import "import/header.scss";

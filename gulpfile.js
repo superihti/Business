@@ -53,6 +53,18 @@ gulp.task('sprite', function () {
   return spriteData.pipe(gulp.dest('build/img'));
 });
 
+/* ------------ Copy fonts ------------- */
+gulp.task('copy-fonts', function() {
+  return gulp.src('./source/fonts/**/*.*')
+    .pipe(gulp.dest('build/fonts'));
+});
+
+/* ------------ Copy images ------------- */
+gulp.task('copy-img', function() {
+  return gulp.src('./source/images/**/*.*')
+    .pipe(gulp.dest('build/images'));
+});
+
 //----------------Delete-------------------------
 gulp.task('clean', function del(cb) {
   return rimraf('build', cb);
@@ -66,7 +78,7 @@ gulp.task('watch', function() {
 
 gulp.task('default', gulp.series(
   'clean',
-  gulp.parallel('pug', 'sass', 'sprite'),
+  gulp.parallel('pug', 'sass', 'sprite', 'copy-img', 'copy-fonts'),
   gulp.parallel('watch', 'server')
   )
 );

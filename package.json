@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "normalize.scss": "^0.1.0"
+  },
   "devDependencies": {
     "browser-sync": "^2.23.5",
     "gulp": "^4.0.0",
