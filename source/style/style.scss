@@ -1,7 +1,11 @@
-@import "../../node_modules/normalize.scss/normalize.scss";       
+//@import "../../node_modules/normalize.scss/normalize.scss"; 
+@import "import/fonts.scss";      
   body {
     min-width: 320px;
-    box-sizing: border-box;  
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+    
 }
 ul {
     list-style-type: none;
@@ -13,5 +17,9 @@ a {
 	width: 1024px;
     margin: 0 auto;
 }
-@import "import/fonts.scss";
+
+
+@import "import/sprite.sass";
 @import "import/header.scss";
+@import "import/banner.scss";
+@import "import/about.scss";

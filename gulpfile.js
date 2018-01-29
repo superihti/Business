@@ -5,7 +5,7 @@ var browserSync = require('browser-sync').create();
 var pug         = require('gulp-pug');
 var sass        = require('gulp-sass');
 var spritesmith = require('gulp.spritesmith');
-var rimraf      = require('rimraf');
+var del         = require('del');
 var rename      = require("gulp-rename");
 var autoprefixer = require('gulp-autoprefixer');
 var plumber     = require('gulp-plumber');
@@ -46,11 +46,13 @@ gulp.task('sass', function () {
 
 //---------------Sprite-----------------------------
 gulp.task('sprite', function () {
-  var spriteData = gulp.src('sourse/img/*.png').pipe(spritesmith({
+  var spriteData = gulp.src('source/images/sprite/*.png').pipe(spritesmith({
     imgName: 'sprite.png',
+    imgPath: '../images/sprite.png',  
     cssName: 'sprite.sass'
   }));
-  return spriteData.pipe(gulp.dest('build/img'));
+  return spriteData.img.pipe(gulp.dest('build/images')),
+  spriteData.css.pipe(gulp.dest('source/style/import'));  
 });
 
 /* ------------ Copy fonts ------------- */
@@ -61,13 +63,13 @@ gulp.task('copy-fonts', function() {
 
 /* ------------ Copy images ------------- */
 gulp.task('copy-img', function() {
-  return gulp.src('./source/images/**/*.*')
+  return gulp.src('./source/images/*.*')
     .pipe(gulp.dest('build/images'));
 });
 
-//----------------Delete-------------------------
-gulp.task('clean', function del(cb) {
-  return rimraf('build', cb);
+/*----------------Delete---------------------*/
+gulp.task('clean', function() {
+  return del('build');
 });
 
 /* ------------ Watchers ------------- */
@@ -78,7 +80,7 @@ gulp.task('watch', function() {
 
 gulp.task('default', gulp.series(
   'clean',
-  gulp.parallel('pug', 'sass', 'sprite', 'copy-img', 'copy-fonts'),
+  gulp.parallel('pug', 'sass', 'copy-img', 'copy-fonts', 'sprite'),
   gulp.parallel('watch', 'server')
   )
 );

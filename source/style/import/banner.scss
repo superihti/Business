@@ -1,0 +1,42 @@
+/*------------------Banner------------------*/
+
+.banner {
+    min-height: 590px;
+    background: url(../images/main-banner.jpg) center/cover no-repeat #1287bf;
+    
+}
+.banner-content {
+  line-height: 0;  
+  text-align: center;
+}
+.banner-content__h3 {
+    display: inline-block;
+  font-family: "helvatica-neue-bold";
+  color:  #fff;
+  font-size: 48px;
+  margin-top: 170px;
+    margin-bottom: 0;
+   
+}
+.banner-content__h4 {
+  font-family: "helvetica-neue-light";
+  color:  #fff;
+  font-size: 30px;
+    
+}
+.banner-content__btn {
+font-family: "helvatica-neue-bold";
+color:  #fff;
+font-size: 23px;
+cursor: pointer;
+text-transform: uppercase;    
+background-color:  #f8cd53;
+width: 330px;
+height: 69px;
+border: 0;
+border-radius: 5px;
+ &:hover {
+   transition: 0.3s;
+   background-color: darken(#f8cd53, 10%);
+   } 
+}

@@ -16,14 +16,18 @@
      }
     &__tel {
      display: inline-block;
-     font-family: Helvetica;
+     font-family: "helvetica-neue-regular";
      color:  #424242;
      font-size: 15px;
-     font-weight: 400;
+     letter-spacing: 1px;
      margin-left: 5px;
      padding-right: 15px;   
      border-right: 1px solid #e2e2e2; 
-     height: 40px;   
+     height: 40px;
+       &:hover {
+        transition: 0.3s;
+        color: lighten(#424242, 30%);
+        } 
      }
     &__fa-mail {
      color:  #424242;
@@ -32,17 +36,25 @@
      margin-left: 15px;   
      }
     &__mail {
-     font-family: Helvetica;
+     font-family: "helvetica-neue-regular";
      color:  #424242;
      font-size: 15px;
-     font-weight: 400;
-     margin-left: 5px;    
+     letter-spacing: 1px;   
+     margin-left: 5px; 
+       &:hover {
+        transition: 0.3s;
+        color: lighten(#424242, 30%);
+        } 
      }
     &__facebook {
      border-radius: 3px;
      padding: 3px 10px;
      margin-left: 10px;   
      background-color:  #1287bf;
+       &:hover {
+        transition: 0.3s;
+        background-color: darken(#1287bf, 10%);
+        } 
     }
     &__fa-facebook {
      color:  #ffffff;
@@ -66,17 +78,16 @@
     align-items: center;
      &__h2 {
      margin: 0;
-     font-family: HelveticaNeue;
+     font-family: "helvatica-neue-bold";
      color:  #424242;
      font-size: 37px;
-     font-weight: 700;    
      }
      &__h3 {
      margin: 0;
-     font-family: HelveticaNeue;
+     font-family: "helvetica-neue-regular";
      color:  #424242;
-     font-size: 15px;
-     font-weight: 400;    
+     font-size: 14px;
+     letter-spacing: 1px; 
      }
     &__wrap {
      margin-left: 10px;   
@@ -102,13 +113,20 @@
     }    
      }
     &__item-link {
-     font-family: HelveticaNeue;
+     display: inline-block;
+     font-family: "helvatica-neue-bold";
      color:  #424242;
      font-size: 15px;
-     font-weight: 700;   
-    }
+       &:hover {
+        transition: 0.3s;
+        color: lighten(#424242, 30%);
+        } 
+     }
     &__item-link_activ {
-     color:  #de2b24;    
+     color:  #de2b24; 
+        &:hover {
+         color:  #de2b24;
+        } 
     }
 }
 .header-main__btn {
@@ -116,11 +134,15 @@
     background-color:  #de2b24;
     width: 171px;
     height: 36px;
-    font-family: HelveticaNeue;
+    font-family: "helvatica-neue-bold";
     color:  #ffffff;
     font-size: 15px;
-    font-weight: 700;
-    text-align: left;
+    text-align: center;
     border: 0;
     padding-left: 20px;
+    cursor: pointer;
+    &:hover {
+        transition: 0.3s;
+        background-color: darken(#de2b24, 10%);
+        } 
 }

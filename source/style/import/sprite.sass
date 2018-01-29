@@ -1,0 +1,99 @@
+// SASS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home
+//   width: $icon-home-width
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites
+$book-name: 'book'
+$book-x: 0px
+$book-y: 81px
+$book-offset-x: 0px
+$book-offset-y: -81px
+$book-width: 66px
+$book-height: 79px
+$book-total-width: 167px
+$book-total-height: 160px
+$book-image: '../images/sprite.png'
+$book: (0px, 81px, 0px, -81px, 66px, 79px, 167px, 160px, '../images/sprite.png', 'book', )
+$cool-name: 'cool'
+$cool-x: 84px
+$cool-y: 0px
+$cool-offset-x: -84px
+$cool-offset-y: 0px
+$cool-width: 83px
+$cool-height: 79px
+$cool-total-width: 167px
+$cool-total-height: 160px
+$cool-image: '../images/sprite.png'
+$cool: (84px, 0px, -84px, 0px, 83px, 79px, 167px, 160px, '../images/sprite.png', 'cool', )
+$quote-name: 'quote'
+$quote-x: 0px
+$quote-y: 0px
+$quote-offset-x: 0px
+$quote-offset-y: 0px
+$quote-width: 84px
+$quote-height: 81px
+$quote-total-width: 167px
+$quote-total-height: 160px
+$quote-image: '../images/sprite.png'
+$quote: (0px, 0px, 0px, 0px, 84px, 81px, 167px, 160px, '../images/sprite.png', 'quote', )
+$spritesheet-width: 167px
+$spritesheet-height: 160px
+$spritesheet-image: '../images/sprite.png'
+$spritesheet-sprites: ($book, $cool, $quote, )
+$spritesheet: (167px, 160px, '../images/sprite.png', $spritesheet-sprites, )
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home
+//   @include sprite-width($icon-home)
+//
+// .icon-email
+//   @include sprite($icon-email)
+//
+// Example usage in HTML:
+//   `display: block` sprite:
+//   <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//   // CSS
+//   .icon {
+//     display: inline-block;
+//   }
+//
+//   // HTML
+//   <i class="icon icon-home"></i>
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SASS
+//
+// @include sprites($spritesheet-sprites)
+@mixin sprites($sprites)
+  @each $sprite in $sprites
+    $sprite-name: nth($sprite, 10)
+    .#{$sprite-name}
+      @include sprite($sprite)
