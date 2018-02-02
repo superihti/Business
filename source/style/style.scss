@@ -14,8 +14,11 @@ a {
     text-decoration: none;
 }
 .container {
-	width: 1024px;
+	max-width: 1024px;
     margin: 0 auto;
+}
+.box {
+    border: 2px solid red;
 }
 
 
@@ -23,3 +26,5 @@ a {
 @import "import/header.scss";
 @import "import/banner.scss";
 @import "import/about.scss";
+@import "import/approch.scss";
+@import "import/work.scss";

@@ -1,0 +1,106 @@
+.approch {
+  background-color:  #f3f3f3;
+  margin-bottom: 130px;
+    
+}
+.approch__h3 {
+  font-family: 'helvatica-neue-bold';
+  color: #424242;
+  font-size: 36px;
+  text-align: center;
+  margin: 0;   
+}
+.approch__h4 {
+  font-family: 'helvetica-neue-light';
+  color: #424242;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+  margin: 0;
+    &::after {
+     display: block;
+     content: "";
+     margin: 15px auto 45px auto;
+     width: 45px;
+     border-bottom: 5px solid #424242;
+    }
+}
+.approch-step1,
+.approch-step2,
+.approch-step3,
+.approch-step4, {
+  display: flex;
+  justify-content: space-between;  
+  align-items: center; 
+  width: 95%;  
+  border-radius: 5px;
+  background-color:  #fff;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    margin-bottom: 40px;
+    &__img {
+      max-width: 340px;
+      }
+    &__step {
+      min-width: 100px;
+      min-height: 100px;
+      background-color: #de2b24;
+      border: 2px solid #fff;
+      border-radius: 3px;
+      position: relative;
+      left: -50px;
+      font-family: "helvetica-neue-regular";
+      color:  #fff;
+      font-size: 20px;
+      text-align: center;
+        &::before {
+           display: block;
+           content: "1";
+           font-family: "georgia-bold";
+           color:  #fff;
+           font-size: 60px;
+           text-align: center;
+           margin-top: 15px;
+           line-height: 50px;
+           }
+    }
+    &-content__h4 {
+    font-family: "helvatica-neue-bold";
+    color:  #424242;
+    font-size: 18px;
+    text-align: left;
+    }
+    &-content__p {
+    font-family: "helvetica-neue-regular";
+    color:  #5c5c5c;
+    font-size: 14px;
+    text-align: left;
+    letter-spacing: 1px;
+    }
+    &__content {
+             
+    }
+}
+.approch-step2,
+.approch-step4 {
+    flex-direction: row-reverse;
+    margin: auto 0 40px auto;
+    
+    &__step {
+       left: 50px; 
+    }
+    &-content__h4 {
+    text-align: right;
+    }
+    &-content__p {
+    text-align: right;
+    }
+}
+.approch-step2__step::before {
+    content: "2";
+}
+.approch-step3__step::before {
+    content: "3";
+}
+.approch-step4__step::before {
+    content: "4";
+}
