@@ -3,11 +3,12 @@
     background-color: #f0f2f4;
     border-bottom: 1px solid #e2e2e2;
     height: 40px;
+    text-align: right;
     &__span {
-        display: block;
-        text-align: right;
+        display: inline-block;
+        
         line-height: 40px;
-        height: 40px;
+        
         }
     &__fa-mobile {
      color:  #424242;
@@ -23,11 +24,15 @@
      margin-left: 5px;
      padding-right: 15px;   
      border-right: 1px solid #e2e2e2; 
-     height: 40px;
+     
        &:hover {
         transition: 0.3s;
         color: lighten(#424242, 30%);
         } 
+        @media screen and (max-width: 400px) {
+          border-right: 0;
+          padding-right: 0px;   
+            }
      }
     &__fa-mail {
      color:  #424242;
@@ -62,16 +67,32 @@
      font-weight: 400;
       
     }
+    @media screen and (max-width: 1040px) {
+        padding: 0 20px;
+        }
+    @media screen and (max-width: 400px) {
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+    }
 }
 .header-main {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     height: 130px;
     &-logo__img {
      width: 74px;
      height: 49px;
      }
+    @media screen and (max-width: 1040px) {
+        margin: 0 20px;
+    }
+    @media screen and (max-width: 900px) {
+        flex-direction: column;
+        height: auto;
+    }
  }
 .header-main-logo {
     display: flex;
@@ -92,12 +113,20 @@
     &__wrap {
      margin-left: 10px;   
      }
+    @media screen and (max-width: 900px) {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+   
 }
 .header-main-nav {
     margin-left: 100px;
     &__item {
      display: inline-block;
      margin-left: 15px;
+    &:first-child {
+      margin-left: 0;
+    } 
     &:after {
       content: '';
       display: inline-block;
@@ -110,7 +139,14 @@
     }
     &:last-child:after {
       display: none;
-    }    
+    } 
+     
+    @media screen and (max-width: 430px){
+        margin-top: 10px;
+        &:after {
+            display: none;
+        }
+        }
      }
     &__item-link {
      display: inline-block;
@@ -128,6 +164,15 @@
          color:  #de2b24;
         } 
     }
+    @media screen and (max-width: 1020px) {
+        margin-left: 10px;
+    }
+    @media screen and (max-width: 900px) {
+        margin-left: 0;
+    }
+    @media screen and (max-width: 430px) {
+        text-align: center;
+    }
 }
 .header-main__btn {
     border-radius: 4px;
@@ -140,9 +185,14 @@
     text-align: center;
     border: 0;
     padding-left: 20px;
+    margin-left: 20px;
     cursor: pointer;
     &:hover {
         transition: 0.3s;
         background-color: darken(#de2b24, 10%);
         } 
+    @media screen and (max-width: 900px) {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 }
