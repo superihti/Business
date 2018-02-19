@@ -2,6 +2,10 @@
    background-color:  #1287bf;
    padding-top: 100px;
     padding-bottom: 100px;
+    @media screen and (max-width: 900px) {
+       padding-top: 30px;
+       padding-bottom: 30px; 
+    }
 }
 .analysis__h3 {
   font-family: 'helvatica-neue-bold';
@@ -9,6 +13,7 @@
   font-size: 36px;
   margin: 0;
   text-align: center;
+  margin: 0 20px;  
   }
 .analysis__h4 {
   font-family: 'helvetica-neue-light';
@@ -50,6 +55,9 @@
         border-right: 30px solid transparent;
         border-bottom: 30px solid #fff;
     }
+    @media screen and (max-width: 550px) {
+       padding: 30px 30px; 
+    }
 }
 .analysis-form-close__btn {
     cursor: pointer;
@@ -83,13 +91,17 @@
     border-width: 1px;
     border-color:  #d8d8d8;
     background-color:  rgba(241, 241, 241, 0);
-    width: 451px;
+    width: 100%;
     height: 58px;
     margin-bottom: 10px;
     padding-left: 20px;
     font-family: "helvetica-neue-regular";
     color:  #b0b0b0;
     font-size: 14px;
+    box-sizing: border-box;
+    @media screen and (max-width: 550px) {
+        height: 45px;
+    }
     }
 .analysis-form-submit__btn {
     display: block;

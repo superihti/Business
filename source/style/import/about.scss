@@ -1,5 +1,8 @@
 .about {
     margin-top: 100px;
+    @media screen and (max-width: 900px) {
+       margin-top: 30px; 
+    }
 }
 .about__h3 {
   font-family: 'helvatica-neue-bold';
@@ -25,14 +28,24 @@
      
 }
 .about-content {
-    
     display: flex;
     justify-content: space-between;
     margin-bottom: 200px;
+    @media screen and (max-width: 900px) {
+     margin-bottom: 50px;   
+    }
+    @media screen and (max-width: 550px) {
+        flex-wrap: wrap;
+        
+    }
         
 }
 .about-content__item {
     padding: 0 45px;
+    @media screen and (max-width: 700px) {
+    padding: 0 20px;
+    margin-bottom: 20px;    
+    }
 }
 .about-content__item-img-cool {
     @include sprite ($cool);

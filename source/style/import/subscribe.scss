@@ -2,11 +2,15 @@
     background-color: #2a2a2a;
     padding-top: 80px;
     text-align: center;
+    @media screen and (max-width: 900px) {
+        padding-top: 30px;
+    }
 }
 .subscribe__h3 {
     font-family: "helvatica-neue-bold";
     color:  #fff;
     font-size: 29px;
+    margin-top: 0;
     
 }
 .subscribe-social-icon {
@@ -40,7 +44,7 @@
     margin-bottom: 25px;
 }
 .subscribe-form {
-    
+
 }
 .subscribe-form__input-mail {
     border-radius: 1px;
@@ -53,7 +57,13 @@
     font-size: 14px;
     letter-spacing: 1px;
     padding-left: 20px;
+    padding-right: 20px;
     margin-bottom: 25px;
+    box-sizing: border-box;
+  @media screen and (max-width: 710px) {
+      width: 90%;
+      
+    }
 }
 .subscribe__btn {
     border-radius: 1px;
@@ -70,5 +80,8 @@
     transition: 0.3s;
     &:hover {
         background: lighten(#2a2a2a, 10%);
+    }
+    @media screen and (max-width: 900px) {
+        margin-bottom: 30px;
     }
 }
