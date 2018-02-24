@@ -10,6 +10,9 @@ var rename      = require("gulp-rename");
 var autoprefixer = require('gulp-autoprefixer');
 var plumber     = require('gulp-plumber');
 var cssmin      = require('gulp-cssmin');
+var uglify      = require('gulp-uglify');
+var sourcemaps  = require('gulp-sourcemaps');
+var concat      = require('gulp-concat');
 
 // ---------------browserSync-----------------------
 gulp.task('server', function() {
@@ -67,6 +70,17 @@ gulp.task('copy-img', function() {
     .pipe(gulp.dest('build/images'));
 });
 
+/* ------------ js ------------- */
+gulp.task('js', function() {
+  return gulp.src(['source/js/form.js',
+                  'source/js/main.js'
+				  ])
+	.pipe(sourcemaps.init())
+	.pipe(concat('scrypt.js'))
+	.pipe(sourcemaps.write())
+	.pipe(gulp.dest('build/js'));
+});	
+
 /*----------------Delete---------------------*/
 gulp.task('clean', function() {
   return del('build');
@@ -76,11 +90,12 @@ gulp.task('clean', function() {
 gulp.task('watch', function() {
   gulp.watch('source/template/**/*.pug', gulp.series('pug'));
   gulp.watch('source/style/**/*.scss', gulp.series('sass'));
+  gulp.watch('source/js/**/*.js', gulp.series('js'));
 });
 
 gulp.task('default', gulp.series(
   'clean',
-  gulp.parallel('pug', 'sass', 'copy-img', 'copy-fonts', 'sprite'),
+  gulp.parallel('pug', 'sass', 'copy-img', 'copy-fonts', 'js', 'sprite'),
   gulp.parallel('watch', 'server')
   )
 );
