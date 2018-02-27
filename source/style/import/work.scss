@@ -39,6 +39,10 @@
     }
 }
 .work-project__a {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
     transition: 0.5s;
     &:hover {
         opacity: 0.5;
